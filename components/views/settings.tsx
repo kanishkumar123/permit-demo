@@ -77,7 +77,7 @@ export function SettingsView() {
               <Input
                 aria-label="Custom alert window in days"
                 inputMode="numeric"
-                className="w-20 text-center tabular"
+                className="w-20! text-center tabular"
                 value={days}
                 onChange={(e) => setDays(e.target.value.replace(/\D/g, "").slice(0, 3))}
                 onBlur={() => saveDays(Number(days))}
@@ -181,7 +181,7 @@ function Section({
 }) {
   return (
     <Card className={cn("p-5 sm:p-6", danger && "border-expired/25")}>
-      <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
+      <div className="flex flex-col gap-5 xl:flex-row xl:items-center xl:justify-between xl:gap-10">
         <div className="flex gap-4">
           <span
             className={cn(
@@ -196,7 +196,7 @@ function Section({
             <p className="mt-1 text-sm leading-relaxed text-ink-2">{body}</p>
           </div>
         </div>
-        <div className="shrink-0 lg:max-w-md">{children}</div>
+        <div className="shrink-0 sm:pl-14 xl:max-w-md xl:pl-0">{children}</div>
       </div>
     </Card>
   );

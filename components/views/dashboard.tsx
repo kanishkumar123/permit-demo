@@ -120,7 +120,7 @@ export function Dashboard() {
 
       <div className="mt-6 grid gap-6 lg:mt-8 lg:grid-cols-[minmax(0,1fr)_320px] xl:grid-cols-[minmax(0,1fr)_340px]">
         <Upcoming entries={entries} focus={focus} setFocus={setFocus} />
-        <div className="flex flex-col gap-6">
+        <div className="grid content-start gap-6 md:grid-cols-2 lg:grid-cols-1">
           <Forecast entries={entries} today={today} />
           <Health counts={counts} />
         </div>

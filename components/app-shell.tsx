@@ -89,21 +89,21 @@ function AddButton({ className, compact }: { className?: string; compact?: boole
 function Sidebar() {
   const pathname = usePathname();
   return (
-    <aside className="fixed inset-y-0 left-0 z-30 hidden w-20 flex-col border-r border-line bg-surface/80 backdrop-blur-xl md:flex lg:w-64">
-      <div className="flex h-16 items-center justify-center px-4 lg:justify-start lg:px-5">
-        <span className="lg:hidden"><Logo compact /></span>
-        <span className="hidden lg:block"><Logo /></span>
+    <aside className="fixed inset-y-0 left-0 z-30 hidden w-20 flex-col border-r border-line bg-surface/80 backdrop-blur-xl md:flex xl:w-64">
+      <div className="flex h-16 items-center justify-center px-4 xl:justify-start xl:px-5">
+        <span className="xl:hidden"><Logo compact /></span>
+        <span className="hidden xl:block"><Logo /></span>
       </div>
-      <div className="px-3 pt-2 pb-4 lg:px-4">
-        <div className="hidden lg:block">
+      <div className="px-3 pt-2 pb-4 xl:px-4">
+        <div className="hidden xl:block">
           <AddButton className="h-10 w-full" />
         </div>
-        <div className="lg:hidden">
+        <div className="xl:hidden">
           <AddButton compact className="mx-auto size-11" />
         </div>
       </div>
-      <nav className="flex flex-1 flex-col gap-1 px-3 lg:px-4">
-        <p className="mb-1 hidden px-3 text-[11px] font-semibold tracking-wider text-ink-3 uppercase lg:block">Menu</p>
+      <nav className="flex flex-1 flex-col gap-1 px-3 xl:px-4">
+        <p className="mb-1 hidden px-3 text-[11px] font-semibold tracking-wider text-ink-3 uppercase xl:block">Menu</p>
         {NAV.map(({ href, label, icon: Icon }) => {
           const active = isActive(pathname, href);
           return (
@@ -112,7 +112,7 @@ function Sidebar() {
               href={href}
               title={label}
               className={cn(
-                "group relative flex h-11 items-center justify-center gap-3 rounded-xl px-3 text-sm font-medium transition-colors lg:h-10 lg:justify-start",
+                "group relative flex h-11 items-center justify-center gap-3 rounded-xl px-3 text-sm font-medium transition-colors xl:h-10 xl:justify-start",
                 active ? "text-ink" : "text-ink-2 hover:bg-ink/[0.04] hover:text-ink",
               )}
             >
@@ -124,13 +124,13 @@ function Sidebar() {
                 />
               )}
               <Icon className={cn("relative size-[18px] shrink-0", active && "text-accent")} strokeWidth={active ? 2.3 : 2} />
-              <span className="relative hidden lg:inline">{label}</span>
-              {href === "/" && <CountBadge className="absolute top-1 right-1 lg:static lg:ml-auto" />}
+              <span className="relative hidden xl:inline">{label}</span>
+              {href === "/" && <CountBadge className="absolute top-1 right-1 xl:static xl:ml-auto" />}
             </Link>
           );
         })}
       </nav>
-      <div className="hidden p-4 lg:block">
+      <div className="hidden p-4 xl:block">
         <div className="rounded-2xl border border-line bg-gradient-to-br from-accent-soft to-surface p-4">
           <p className="text-xs font-semibold text-ink">Stored on this device</p>
           <p className="mt-1 text-xs leading-relaxed text-ink-2">
@@ -199,7 +199,7 @@ export function AppShell({ children }: { children: ReactNode }) {
     <ToastProvider>
       <UIProvider>
         <Sidebar />
-        <div className="flex min-h-dvh flex-col md:pl-20 lg:pl-64">
+        <div className="flex min-h-dvh flex-col md:pl-20 xl:pl-64">
           <MobileTopBar />
           <main className="mx-auto w-full max-w-6xl flex-1 px-4 pt-5 pb-[calc(96px+env(safe-area-inset-bottom))] sm:px-6 md:pt-8 md:pb-12 lg:px-10 lg:pt-10">
             <FleetGate fallback={<ShellSkeleton />}>

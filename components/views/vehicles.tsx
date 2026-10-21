@@ -81,7 +81,7 @@ export function VehiclesView() {
         }
       />
 
-      <div className="mb-4 flex flex-col gap-3 lg:flex-row lg:items-center">
+      <div className="mb-4 flex flex-col gap-3 xl:flex-row xl:items-center">
         <div className="relative flex-1">
           <Search className="pointer-events-none absolute top-1/2 left-3.5 size-[18px] -translate-y-1/2 text-ink-3" />
           <input
@@ -101,7 +101,7 @@ export function VehiclesView() {
             </button>
           )}
         </div>
-        <div className="no-scrollbar -mx-4 flex items-center gap-2 overflow-x-auto px-4 lg:mx-0 lg:px-0">
+        <div className="no-scrollbar -mx-4 flex items-center gap-2 overflow-x-auto px-4 sm:-mx-6 sm:px-6 lg:-mx-10 lg:px-10 xl:mx-0 xl:px-0">
           <Segmented
             value={type}
             onChange={setType}
@@ -150,7 +150,7 @@ export function VehiclesView() {
                   <th className="py-3 pr-3 pl-5 font-semibold">Vehicle</th>
                   <th className="px-3 py-3 font-semibold">Permit</th>
                   <th className="px-3 py-3 font-semibold">FC</th>
-                  <th className="hidden px-3 py-3 text-right font-semibold xl:table-cell">Paid</th>
+                  <th className="hidden px-3 py-3 text-right font-semibold lg:table-cell">Paid</th>
                   <th className="w-10 py-3 pr-4" />
                 </tr>
               </thead>
@@ -177,7 +177,7 @@ export function VehiclesView() {
                       </td>
                       <td className="px-3 py-3.5"><DocCell vehicle={r.vehicle} kind="permit" /></td>
                       <td className="px-3 py-3.5"><DocCell vehicle={r.vehicle} kind="fc" /></td>
-                      <td className="hidden px-3 py-3.5 text-right font-medium text-ink-2 tabular xl:table-cell">
+                      <td className="hidden px-3 py-3.5 text-right font-medium text-ink-2 tabular lg:table-cell">
                         {formatMoney(totalPaid(r.vehicle))}
                       </td>
                       <td className="py-3.5 pr-4">

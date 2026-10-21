@@ -26,7 +26,7 @@ export function MastersView() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.06, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
           >
-            <Card className="overflow-hidden">
+            <Card className="@container overflow-hidden">
               <div className="flex items-center gap-3 border-b border-line px-5 py-4">
                 <span
                   className={cn(
@@ -72,7 +72,7 @@ function MasterRow({ type, kind, duration, today }: { type: VehicleType; kind: D
   };
 
   return (
-    <div className="flex flex-col gap-4 px-5 py-5 sm:flex-row sm:items-center sm:justify-between">
+    <div className="flex flex-col gap-4 px-5 py-5 @lg:flex-row @lg:items-center @lg:justify-between">
       <div className="min-w-0">
         <p className="text-sm font-semibold text-ink">
           {TYPE_LABEL[type]} {DOC_LABEL[kind]}
@@ -107,7 +107,7 @@ function MasterRow({ type, kind, duration, today }: { type: VehicleType; kind: D
 
 function Stepper({ label, value, max, onChange }: { label: string; value: number; max: number; onChange: (v: number) => void }) {
   return (
-    <div className="flex flex-1 flex-col gap-1 sm:flex-none">
+    <div className="flex flex-1 flex-col gap-1 @lg:flex-none">
       <span className="text-[11px] font-semibold tracking-wide text-ink-3 uppercase">{label}</span>
       <div className="flex h-10 items-center rounded-xl border border-line-strong bg-surface shadow-card">
         <button
