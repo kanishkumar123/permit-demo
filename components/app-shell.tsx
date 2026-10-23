@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { LayoutDashboard, Plus, Settings2, SlidersHorizontal, Truck } from "lucide-react";
+import { LayoutDashboard, Monitor, Plus, Settings2, SlidersHorizontal, Truck } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
@@ -129,6 +129,14 @@ function Sidebar() {
             </Link>
           );
         })}
+        <Link
+          href="/tv"
+          title="TV board"
+          className="mt-auto mb-2 flex h-11 items-center justify-center gap-3 rounded-xl px-3 text-sm font-medium text-ink-2 transition-colors hover:bg-ink/[0.04] hover:text-ink xl:h-10 xl:justify-start"
+        >
+          <Monitor className="size-[18px] shrink-0" strokeWidth={2} />
+          <span className="hidden xl:inline">TV board</span>
+        </Link>
       </nav>
       <div className="hidden p-4 xl:block">
         <div className="rounded-2xl border border-line bg-gradient-to-br from-accent-soft to-surface p-4">

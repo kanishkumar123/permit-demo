@@ -100,6 +100,40 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   animation: shimmer 1.4s ease-in-out infinite;
 }
 
+/* TV board: dark, high-contrast palette, and 1rem = 16px at 1080p so the layout scales to any 16:9 screen. */
+html:has(.tv) {
+  color-scheme: dark;
+  font-size: min(0.8333vw, 1.4815vh);
+  background: #080b12;
+}
+
+html:has(.tv) body {
+  background: #080b12;
+}
+
+.tv {
+  --bg: #080b12;
+  --surface: #10141e;
+  --surface-2: #151a26;
+  --ink: #f3f5fa;
+  --ink-2: #b3bacb;
+  --ink-3: #6f788d;
+  --line: #1f2635;
+  --line-strong: #2c3446;
+  --accent: #8286ff;
+  --accent-ink: #a5a8ff;
+  --accent-soft: rgb(130 134 255 / 0.14);
+
+  --expired: #ff5c62;
+  --expired-soft: rgb(255 92 98 / 0.1);
+  --critical: #ff8f45;
+  --critical-soft: rgb(255 143 69 / 0.1);
+  --soon: #f7c04a;
+  --soon-soft: rgb(247 192 74 / 0.1);
+  --valid: #3ad27f;
+  --valid-soft: rgb(58 210 127 / 0.1);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
